@@ -1,27 +1,33 @@
 #include <string>
+#include <vector>
 
-std::string calculate_prime_factors(unsigned int number)
+std::vector<unsigned int> calculate_prime_factors(unsigned int number)
 {
-    std::string result = "1";
+    std::vector<unsigned int> results;
+    results.push_back(1);
     for (unsigned int i = 2; i <= number; i++)
     {
         unsigned int remainder = number % i;
 
         if (remainder == 0)
         {
-            std::string remainder_str = (", " + std::to_string(i));
-            result += remainder_str;
+            results.push_back(i);
         }
     }
     
-    result += "\n";
-    return result;
+    return results;
 }
 
 int main(int argc, char *argv[])
 {
     unsigned int number = 21;
-    std::string primes = calculate_prime_factors(number);
-    printf(primes.c_str());
+    std::vector<unsigned int> primes = calculate_prime_factors(number);
+    printf("%lu", primes.at(0));
+    for (std::vector<unsigned int>::iterator it = primes.begin() + 1; it != primes.end(); it++)
+    {
+        printf(", %lu", *it);
+    }
+
+    printf("\n");
     return 0;
 }
