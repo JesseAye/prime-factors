@@ -5,7 +5,7 @@ std::vector<unsigned int> calculate_prime_factors(unsigned int number)
 {
     std::vector<unsigned int> results;
     results.push_back(1);
-    for (unsigned int i = 2; i <= number; i++)
+    for (unsigned int i = 2; i <= (number / 2); i++)
     {
         unsigned int remainder = number % i;
 
@@ -15,6 +15,7 @@ std::vector<unsigned int> calculate_prime_factors(unsigned int number)
         }
     }
     
+    results.push_back(number);
     return results;
 }
 
