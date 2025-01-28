@@ -1,7 +1,7 @@
 #include <string>
 #include <vector>
 
-std::vector<unsigned int> calculate_prime_factors(unsigned int number)
+std::vector<unsigned int> calculate_factors(unsigned int number)
 {
     std::vector<unsigned int> results;
     results.push_back(1);
@@ -21,8 +21,8 @@ std::vector<unsigned int> calculate_prime_factors(unsigned int number)
 
 int main(int argc, char *argv[])
 {
-    unsigned int number = 21;
-    std::vector<unsigned int> primes = calculate_prime_factors(number);
+    unsigned int number = 25;
+    std::vector<unsigned int> primes = calculate_factors(number);
     printf("%lu", primes.at(0));
     for (std::vector<unsigned int>::iterator it = primes.begin() + 1; it != primes.end(); it++)
     {
