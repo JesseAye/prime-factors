@@ -57,9 +57,9 @@ int main(int argc, char *argv[])
     }
     printf("\n");
 
-    std::vector<uint> primes = calculate_factors(number);
-    printf("%lu", primes.at(0));
-    for (std::vector<uint>::iterator it = primes.begin() + 1; it != primes.end(); it++)
+    std::vector<uint> factors = calculate_factors(number);
+    printf("%lu", factors.at(0));
+    for (std::vector<uint>::iterator it = factors.begin() + 1; it != factors.end(); it++)
     {
         printf(", %lu", *it);
     }
